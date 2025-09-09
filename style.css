@@ -1,4 +1,4 @@
-/* Reset */
+/*************** Reset *********************/
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,34 +6,31 @@
 }
 
 img {
-  display: block;
   width: 100%;
   height: 100%;
+  display: block;
   object-fit: cover;
   object-position: center;
 }
 
-/* Desktop – præcis som wireframen */
 .grid {
-  display: grid; /* parent: display */
-  grid-template-columns: repeat(4, 1fr); /* parent: grid-template-columns */
-  gap: 10px; /* parent: gap */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
   padding: 10px;
   min-height: 100vh;
-  grid-auto-rows: minmax(180px, 28vw); /* ens højder */
+  grid-auto-rows: minmax(180px, 28vw);
 }
 
-/* Kort/bokse (ingen sort kant) */
 .card {
   display: grid;
   overflow: hidden;
   background: #fff;
 }
 
-/* Placering med grid-column / grid-row */
 .big {
-  grid-column: 1 / span 2; /* child: grid-column */
-  grid-row: 1 / span 2; /* child: grid-row */
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 2;
 }
 
 .small1 {
@@ -51,7 +48,7 @@ img {
   grid-row: 2;
 }
 
-/* Tablet: 2 kolonner */
+/* : 2 kolonner */
 @media (max-width: 768px) {
   .grid {
     grid-template-columns: 1fr 1fr;
@@ -99,19 +96,6 @@ img {
     grid-row: auto;
   }
 }
-
-/* Justering af nederste højre billede */
-.wide img {
-  object-fit: cover;
-  object-position: top center; /* flytter fokus op, så blomsten ses bedre */
-}
-
-/* Layout-billedet under grid */
-.layout-img {
-  margin-top: 20px; /* luft mellem grid og layoutbilledet */
-  text-align: center; /* centrerer billedet */
-}
-
 .layout-img img {
   max-width: 100%; /* responsivt */
   height: auto;
